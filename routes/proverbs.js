@@ -9,9 +9,32 @@ router.get("/", async (req, res) => {
   try {
     const data = await fs.readFile(filePath, "utf-8");
     const proverbs = JSON.parse(data);
+    const { category } = req.query;
+
+    if (category) {
+      const filtered = proverbs.filter(
+        (p) => p.category && p.category.toLowerCase() === category.toLowerCase()
+      );
+      return res.json(filtered);
+    }
+
     res.json(proverbs);
   } catch (err) {
     res.status(500).json({ message: "Error reading data" });
+  }
+});
+router.get("/random", async (req, res) => {
+  try {
+    const data = await fs.readFile(filePath, "utf-8");
+    const proverbs = JSON.parse(data);
+    if (proverbs.length === 0) {
+      return res.status(404).json({ message: "no proverbs available" });
+    }
+    const randomIndex = Math.floor(Math.random() * proverbs.length);
+    const randomProverb = proverbs[randomIndex];
+    res.json(randomProverb);
+  } catch (err) {
+    res.status(500).json({ message: "error getting the proverb" });
   }
 });
 
