@@ -36,7 +36,7 @@ Data Storage: JSON file
 Installation
 
 Clone the repository
-git clone https://github.com/your-username/afghan-proverbs-api.git
+git clone https://github.com/najmawahedi/afghan-proverbs-API
 
 Install dependencies by
 npm install
