@@ -1,18 +1,26 @@
 [
   {
     "id": 1,
-    "textDari": "اسمان ابی زیباست",
-    "textPashto": " شین اسمان شکلی دی",
-    "translationEnglish": "the blue sky the beautiful",
-    "meaning": "no special meaning",
-    "category": "plain text"
+    "textDari": "آغاز هر کاری سخت است",
+    "textPashto": "د هر کار پیل سخت دی",
+    "translationEn": "The beginning of every task is hard",
+    "meaning": "Starting something new always seems difficult, but persistence makes it easier.",
+    "category": "Motivation"
+  },
+  {
+    "id": 2,
+    "textDari": "گرگ پیر از گله دور می‌افتد",
+    "textPashto": "زوړ وولف له خپلو ګله لرې کېږي",
+    "translationEn": "The old wolf falls away from the pack",
+    "meaning": "Those who are no longer useful are often abandoned by the group.",
+    "category": "Wisdom"
   },
   {
     "id": 3,
-    "textDari": "قطره قطره دریا می‌شود",
-    "textPashto": "څاڅکی، څاڅکی سیند جوړېږي",
-    "translationEn": "drops makes river",
-    "meaning": "doing somethin over and over makes it big",
-    "category": "Wisdom"
+    "textDari": "دوستی در وقت سختی امتحان می‌شود",
+    "textPashto": "دوستي په سختو حالاتو کې ازموینه کېږي",
+    "translationEn": "Friendship is tested in times of difficulty",
+    "meaning": "True friends are those who stand by you when things get tough.",
+    "category": "Friendship"
   }
 ]

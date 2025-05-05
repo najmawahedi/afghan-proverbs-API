@@ -37,6 +37,36 @@ router.get("/random", async (req, res) => {
     res.status(500).json({ message: "error getting the proverb" });
   }
 });
+router.get("/search", async (req, res) => {
+  try {
+    const { keyword } = req.query;
+    if (!keyword || typeof keyword !== "string") {
+      return res.status(400).json({ message: "expected correct keyword" });
+    }
+
+    const data = await fs.readFile(filePath, "utf-8");
+    const proverbs = JSON.parse(data);
+
+    const lowerKeyWord = keyword.toLowerCase();
+    const proverbsFiltered = proverbs.filter((p) => {
+      return (
+        p.textDari.toLowerCase().includes(lowerKeyWord) ||
+        p.textPashto.toLowerCase().includes(lowerKeyWord) ||
+        p.meaning.toLowerCase().includes(lowerKeyWord) ||
+        p.category.toLowerCase().includes(lowerKeyWord) ||
+        p.translationEn.toLowerCase().includes(lowerKeyWord)
+      );
+    });
+
+    if (proverbsFiltered.length === 0) {
+      return res.status(404).json({ message: "keyword not found" });
+    }
+
+    res.json(proverbsFiltered);
+  } catch (err) {
+    res.status(500).json({ message: "error loading data" });
+  }
+});
 
 // GET proverb by ID
 router.get("/:id", async (req, res) => {
