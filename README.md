@@ -1,4 +1,4 @@
-Afghan Proverbs & Sayings API
+*Afghan Proverbs & Sayings API*
 
 A RESTful API to store and manage Afghan proverbs in Dari, Pashto, and English translations. Supports CRUD operations, searching, filtering by category, and retrieving random proverbs.
 
@@ -38,9 +38,9 @@ Installation
 Clone the repository
 git clone https://github.com/najmawahedi/afghan-proverbs-API
 
-Install dependencies by
-npm install
+Install dependencies by <br>
+*npm install*
 
 then
-Start the server
-npm start
+Start the server <br>
+*npm start*
