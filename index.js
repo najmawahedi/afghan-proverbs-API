@@ -1,6 +1,5 @@
 import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
+
 import proverbRoutes from "./routes/proverbs.js";
 
 const app = express();
