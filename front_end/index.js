@@ -26,6 +26,17 @@ APP.get("/", async (req, res) => {
     res.status(500).send("error getting proverbs");
   }
 });
+APP.get("/proverbs/:id", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://afghan-proverbs-api-3.onrender.com/proverbs/${req.params.id}`
+    );
+    const proverb = response.data;
+    res.render("detail", { proverb });
+  } catch (error) {
+    res.status(404).send("Proverb not found");
+  }
+});
 
 APP.listen(port, () => {
   console.log("server is running on port", port);

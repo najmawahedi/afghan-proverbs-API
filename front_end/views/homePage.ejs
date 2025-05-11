@@ -12,9 +12,11 @@
     <strong>Dari:</strong> <%= proverb.textDari %> <br />
     <strong>Pashto:</strong> <%= proverb.textPashto %> <br />
     <strong>English:</strong> <%= proverb.translationEn %> <br />
-    <strong>Category:</strong> <%= proverb.category %>
+    <strong>Category:</strong> <%= proverb.category %> <br />
+    <a href="/proverbs/<%= proverb.id %>"> view details </a>
+
     <hr />
   </li>
   <% }) %>
 </ul>
-<% } %>
+<% } %> <%- include("footer") %>
