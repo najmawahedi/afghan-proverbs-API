@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/styles/styles.css" />
+<%- include("header") %>
+
+<h1>Afghan Proverbs</h1>
+
+<% if (proverbs.length === 0) { %>
+<p>No proverbs found.</p>
+<% } else { %>
+<ul>
+  <% proverbs.forEach(proverb => { %>
+  <li>
+    <strong>Dari:</strong> <%= proverb.textDari %> <br />
+    <strong>Pashto:</strong> <%= proverb.textPashto %> <br />
+    <strong>English:</strong> <%= proverb.translationEn %> <br />
+    <strong>Category:</strong> <%= proverb.category %>
+    <hr />
+  </li>
+  <% }) %>
+</ul>
+<% } %>
