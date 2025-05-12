@@ -38,9 +38,9 @@ APP.get("/proverbs/:id", async (req, res) => {
   }
 });
 
-APP.get("/proverbs/:id/delete", (req, res) => {
+APP.get("/proverbs/:id/delete", async (req, res) => {
   try {
-    axios.delete(
+    await axios.delete(
       `https://afghan-proverbs-api-3.onrender.com/proverbs/${req.params.id}`
     );
     res.redirect("/");

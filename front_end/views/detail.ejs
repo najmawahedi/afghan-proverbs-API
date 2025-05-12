@@ -12,10 +12,10 @@
     <p><strong>Meaning:</strong> <%= proverb.meaning %></p>
     <p><strong>Category:</strong> <%= proverb.category %></p>
     <a href="./edit/:id">Edit proverb</a>
-    <form action="/proverbs/<% proverb.id %>/delete" method="post">
+    <form action="/proverbs/<%= proverb.id %>/delete" method="post">
       <button type="submit">Delete</button>
     </form>
-    <a href="./delete/:id">Delete proverb</a>
+
     <br />
 
     <a href="/">⬅ Back to All Proverbs</a>
