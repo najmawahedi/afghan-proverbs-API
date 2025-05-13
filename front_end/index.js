@@ -18,7 +18,7 @@ APP.set("views", path.join(__dirName, "views"));
 APP.get("/", async (req, res) => {
   try {
     const response = await axios.get(
-      "https://afghan-proverbs-api-3.onrender.com/proverbs/"
+      "https://afghan-proverbs-api-12.onrender.com/proverbs/"
     );
     const proverbs = response.data;
     res.render("homePage", { proverbs });
@@ -26,10 +26,15 @@ APP.get("/", async (req, res) => {
     res.status(500).send("error getting proverbs");
   }
 });
+
+APP.get("/proverbs/new", (req, res) => {
+  res.render("add"); // 'add.ejs' file
+});
 APP.get("/proverbs/:id", async (req, res) => {
   try {
+    const id = req.params.id;
     const response = await axios.get(
-      `https://afghan-proverbs-api-3.onrender.com/proverbs/${req.params.id}`
+      `https://afghan-proverbs-api-12.onrender.com/proverbs/${id}`
     );
     const proverb = response.data;
     res.render("detail", { proverb });
@@ -38,14 +43,71 @@ APP.get("/proverbs/:id", async (req, res) => {
   }
 });
 
-APP.get("/proverbs/:id/delete", async (req, res) => {
+APP.post("/proverbs/:id/delete", async (req, res) => {
   try {
+    const id = req.params.id;
     await axios.delete(
-      `https://afghan-proverbs-api-3.onrender.com/proverbs/${req.params.id}`
+      `https://afghan-proverbs-api-12.onrender.com/proverbs/${id}`
     );
     res.redirect("/");
   } catch (error) {
-    res.status(500).send("failed to delete");
+    res.status(500).send("Failed to delete");
+  }
+});
+
+APP.get("/proverbs/:id/edit", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const response = await axios.get(
+      `https://afghan-proverbs-api-12.onrender.com/proverbs/${id}`
+    );
+    const proverb = response.data;
+    res.render("edit", { proverb });
+  } catch (error) {
+    res.status(404).send("proverb not found");
+  }
+});
+APP.post("/proverbs/:id/edit", async (req, res) => {
+  const id = req.params.id;
+  const updatedProverb = {
+    textDari: req.body.textDari,
+    textPashto: req.body.textPashto,
+    translationEn: req.body.translationEn,
+    meaning: req.body.meaning,
+    category: req.body.category,
+  };
+
+  try {
+    await axios.put(
+      `https://afghan-proverbs-api-12.onrender.com/proverbs/${id}`,
+      updatedProverb
+    );
+    res.redirect(`/proverbs/${id}`);
+  } catch (error) {
+    res.status(500).send("Failed to update proverb");
+  }
+});
+
+// Show the add form
+
+// Handle form submission
+APP.post("/proverbs", async (req, res) => {
+  const newProverb = {
+    textDari: req.body.textDari,
+    textPashto: req.body.textPashto,
+    translationEn: req.body.translationEn,
+    meaning: req.body.meaning,
+    category: req.body.category,
+  };
+
+  try {
+    await axios.post(
+      "https://afghan-proverbs-api-12.onrender.com/proverbs",
+      newProverb
+    );
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).send("Failed to add proverb");
   }
 });
 
