@@ -10,7 +10,7 @@
   {
     "id": 2,
     "textDari": "گرگ پیر از گله دور می‌افتد",
-    "textPashto": "زوړ وولف له خپلو ګله لرې کېږي",
+    "textPashto": "زوړ لیوه  له خپلو ګله لرې کېږي",
     "translationEn": "The old wolf falls away from the pack",
     "meaning": "Those who are no longer useful are often abandoned by the group.",
     "category": "Wisdom"
@@ -26,9 +26,97 @@
   {
     "id": 4,
     "textDari": "از ماست که بر ماست",
-    "textPashto": "زموږ څخه دی چې زموږ باندې دیv",
+    "textPashto": "زموږ څخه دی چې زموږ باندې دی",
     "translationEn": "It is from us that is upon us",
     "meaning": "We are responsible for our own fate",
     "category": "Responsibility"
+  },
+  {
+    "id": 5,
+    "textDari": "وقت طلاست",
+    "textPashto": "وخت طلا دی",
+    "translationEn": "Time is gold",
+    "meaning": "Time is precious and should be used wisely.",
+    "category": "Time"
+  },
+  {
+    "id": 6,
+    "textDari": "از مرگ نه، بلکه از زندگی بی‌هدف بترس",
+    "textPashto": "د مرګ نه، بلکه د بې هدفه ژوند څخه وېرېږه",
+    "translationEn": "Do not fear death, but fear a life without purpose.",
+    "meaning": "Living a life without meaning or purpose is worse than death itself.",
+    "category": "Life"
+  },
+  {
+    "id": 7,
+    "textDari": "درختی که ریشه ندارد، نمی‌تواند رشد کند",
+    "textPashto": "هغه ونه چې ریښې نه لري، وده نشي کولی",
+    "translationEn": "A tree without roots cannot grow",
+    "meaning": "Without a solid foundation, growth is impossible.",
+    "category": "Growth"
+  },
+  {
+    "id": 8,
+    "textDari": "آب که یک بار از دست رفت، باز نمی‌گردد",
+    "textPashto": "اوړی چې یو ځل تښتي، بیرته نه راځي",
+    "translationEn": "Once water is lost, it doesn't return",
+    "meaning": "Time and opportunities, once lost, cannot be regained.",
+    "category": "Time"
+  },
+  {
+    "id": 9,
+    "textDari": "خود را بشناس",
+    "textPashto": "ځان وپېژنه",
+    "translationEn": "Know thyself",
+    "meaning": "Understanding yourself is the first step toward wisdom.",
+    "category": "Wisdom"
+  },
+  {
+    "id": 10,
+    "textDari": "به زودی همه چیز تغییر می‌کند",
+    "textPashto": "ټولې خبرې ژر بدلېږي",
+    "translationEn": "Everything changes soon",
+    "meaning": "No situation is permanent, everything changes with time.",
+    "category": "Change"
+  },
+  {
+    "id": 11,
+    "textDari": "گرمترین محبت، سردترین استراحت می‌آورد",
+    "textPashto": "تر ټولو ګرم محبت، تر ټولو سړه ارامتیا راوړي",
+    "translationEn": "The warmest love brings the coldest rest",
+    "meaning": "The greatest sacrifices often lead to the deepest peace.",
+    "category": "Love"
+  },
+  {
+    "id": 12,
+    "textDari": "شجاعت مقابله در برابر ترس است",
+    "textPashto": "زړورتیا د وېره پر وړاندې ده",
+    "translationEn": "Courage is in facing fear",
+    "meaning": "Being brave means confronting and overcoming fear.",
+    "category": "Courage"
+  },
+  {
+    "id": 13,
+    "textDari": "کسی که خود را می‌فروشد، همیشه از آنچه که خود دارد محروم است",
+    "textPashto": "هغه څوک چې ځان پلوري، همېشه له هغه څه محروم وي چې لري",
+    "translationEn": "One who sells themselves is always deprived of what they have",
+    "meaning": "Losing your integrity means losing your true worth.",
+    "category": "Integrity"
+  },
+  {
+    "id": 14,
+    "textDari": "بزرگ‌ترین دشمن، خود انسان است",
+    "textPashto": "تر ټولو لوی دښمن، خود انسان دی",
+    "translationEn": "The greatest enemy is oneself",
+    "meaning": "Our own fears, doubts, and weaknesses are often our biggest obstacles.",
+    "category": "Self"
+  },
+  {
+    "id": 15,
+    "textDari": "خواب‌های بزرگ را دنبال کن",
+    "textPashto": "لوی خوبونه تعقیب کړه",
+    "translationEn": "Chase big dreams",
+    "meaning": "Don't settle for less, always aim for greatness.",
+    "category": "Dreams"
   }
 ]
