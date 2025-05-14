@@ -88,8 +88,6 @@ APP.post("/proverbs/:id/edit", async (req, res) => {
   }
 });
 
-// Show the add form
-
 // Handle form submission
 APP.post("/proverbs", async (req, res) => {
   const newProverb = {

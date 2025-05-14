@@ -1,22 +1,37 @@
-<link rel="stylesheet" href="/styles/styles.css" />
 <%- include("header") %>
 
-<h1>Afghan Proverbs</h1>
+<div class="container">
+  <h1 class="text-center mb-4">Afghan Proverbs</h1>
 
-<% if (proverbs.length === 0) { %>
-<p>No proverbs found.</p>
-<% } else { %>
-<ul>
-  <% proverbs.forEach(proverb => { %>
-  <li>
-    <strong>Dari:</strong> <%= proverb.textDari %> <br />
-    <strong>Pashto:</strong> <%= proverb.textPashto %> <br />
-    <strong>English:</strong> <%= proverb.translationEn %> <br />
-    <strong>Category:</strong> <%= proverb.category %> <br />
-    <a href="/proverbs/<%= proverb.id %>"> view details </a>
+  <% if (proverbs.length === 0) { %>
+  <div class="alert alert-warning text-center">No proverbs found.</div>
+  <% } else { %>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% proverbs.forEach(proverb => { %>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <p class="card-text">
+            <strong>Dari:</strong> <%= proverb.textDari %>
+          </p>
+          <p class="card-text">
+            <strong>Pashto:</strong> <%= proverb.textPashto %>
+          </p>
+          <p class="card-text">
+            <strong>English:</strong> <%= proverb.translationEn %>
+          </p>
+          <p class="card-text">
+            <strong>Category:</strong> <%= proverb.category %>
+          </p>
+          <a href="/proverbs/<%= proverb.id %>" class="btn btn-primary mt-2"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>
 
-    <hr />
-  </li>
-  <% }) %>
-</ul>
-<% } %> <%- include("footer") %>
+<%- include("footer") %>
