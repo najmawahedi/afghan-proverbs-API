@@ -37,6 +37,19 @@ router.get("/random", async (req, res) => {
     res.status(500).json({ message: "error getting the proverb" });
   }
 });
+
+router.get("/categoryList", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://afghan-proverbs-api-12.onrender.com/proverbs"
+    );
+    const allProverbs = response.data;
+    const categories = [...new Set(allProverbs.map((p) => p.category))];
+    res.json(categories);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching categories." });
+  }
+});
 router.get("/search", async (req, res) => {
   try {
     const { keyword } = req.query;

@@ -1,0 +1,20 @@
+<%- include('header') %>
+
+<div class="container py-5">
+  <h1 class="text-center mb-4">Random Proverb</h1>
+  <div class="card shadow-lg">
+    <div class="card-header bg-info text-white">
+      <h4 class="mb-0"><%= proverb.category %></h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Dari:</strong> <%= proverb.textDari %></p>
+      <p><strong>Pashto:</strong> <%= proverb.textPashto %></p>
+      <p><strong>English Translation:</strong> <%= proverb.translationEn %></p>
+      <p><strong>Meaning:</strong> <%= proverb.meaning %></p>
+      <a href="/random" class="btn btn-info mt-3">Show Another</a>
+      <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>

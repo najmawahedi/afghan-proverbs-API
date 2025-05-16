@@ -1,0 +1,21 @@
+<%- include('header') %>
+
+<div class="container py-4">
+  <h2 class="mb-4">Proverbs in Category: "<%= category %>"</h2>
+
+  <% if (proverbs.length === 0) { %>
+  <p>No proverbs found in this category.</p>
+  <% } else { %> <% proverbs.forEach(p => { %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= p.category %></h5>
+      <p><strong>Dari:</strong> <%= p.textDari %></p>
+      <p><strong>Pashto:</strong> <%= p.textPashto %></p>
+      <p><strong>English:</strong> <%= p.translationEn %></p>
+      <p><strong>Meaning:</strong> <%= p.meaning %></p>
+    </div>
+  </div>
+  <% }) %> <% } %>
+</div>
+
+<%- include('footer') %>
