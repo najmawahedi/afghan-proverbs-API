@@ -38,18 +38,25 @@ router.get("/random", async (req, res) => {
   }
 });
 
-router.get("/categoryList", async (req, res) => {
+router.get("/categories", async (req, res) => {
   try {
-    const response = await axios.get(
-      "https://afghan-proverbs-api-12.onrender.com/proverbs"
+    const data = await fs.readFile(filePath, "utf-8");
+    const proverbs = JSON.parse(data);
+
+    const categoriesSet = new Set(
+      proverbs
+        .filter((p) => p.category && typeof p.category === "string")
+        .map((p) => p.category.trim())
     );
-    const allProverbs = response.data;
-    const categories = [...new Set(allProverbs.map((p) => p.category))];
-    res.json(categories);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching categories." });
+
+    const categories = Array.from(categoriesSet);
+
+    res.json({ categories });
+  } catch (err) {
+    res.status(500).json({ message: "Error loading categories" });
   }
 });
+
 router.get("/search", async (req, res) => {
   try {
     const { keyword } = req.query;
