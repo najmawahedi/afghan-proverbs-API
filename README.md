@@ -37,7 +37,7 @@ cd afghan-proverbs-app
 #### Browse All Proverbs
 See a beautiful list of proverbs on the Home page.
 
-####Get a Random Proverb
+#### Get a Random Proverb
 
 #### Add Your Own
 Use the Add New Proverb form to contribute.
