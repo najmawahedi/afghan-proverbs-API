@@ -88,6 +88,41 @@ APP.post("/proverbs/:id/delete", async (req, res) => {
   }
 });
 
+APP.get("/categories", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://afghan-proverbs-api-12.onrender.com/proverbs"
+    );
+    const proverbs = response.data;
+
+    const categories = [...new Set(proverbs.map((p) => p.category))];
+    res.render("categoryList", { categories });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Failed to load categories.");
+  }
+});
+
+APP.get("/categories/:categoryName", async (req, res) => {
+  const category = req.params.categoryName;
+  try {
+    const encodedCategory = encodeURIComponent(category);
+    const response = await axios.get(
+      `https://afghan-proverbs-api-12.onrender.com/proverbs?category=${encodedCategory}`
+    );
+    const proverbs = response.data;
+
+    if (!proverbs || proverbs.length === 0) {
+      return res.status(404).send("No proverbs found for this category.");
+    }
+
+    res.render("categoryPage", { proverbs, category });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Failed to fetch proverbs.");
+  }
+});
+
 APP.get("/proverbs/:id/edit", async (req, res) => {
   try {
     const id = req.params.id;
@@ -138,51 +173,6 @@ APP.post("/proverbs", async (req, res) => {
     res.redirect("/");
   } catch (error) {
     res.status(500).send("Failed to add proverb");
-  }
-});
-
-APP.get("/proverbs/categoryList", async (req, res) => {
-  try {
-    const response = await axios.get(
-      "https://afghan-proverbs-api-12.onrender.com/proverbs"
-    );
-    const proverbs = response.data;
-
-    const categories = [...new Set(proverbs.map((p) => p.category))];
-    res.render("categoryList", { categories });
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Failed to load categories.");
-  }
-});
-
-// Route to show proverbs by category
-APP.get("/proverbs", async (req, res) => {
-  const category = req.query.category;
-  try {
-    let response;
-
-    if (category) {
-      const encodedCategory = encodeURIComponent(category);
-      response = await axios.get(
-        `https://afghan-proverbs-api-12.onrender.com/proverbs?category=${encodedCategory}`
-      );
-    } else {
-      response = await axios.get(
-        "https://afghan-proverbs-api-12.onrender.com/proverbs"
-      );
-    }
-
-    const proverbs = response.data;
-
-    if (!proverbs || proverbs.length === 0) {
-      return res.status(404).send("No proverbs found for this category.");
-    }
-
-    res.render("proverbs", { proverbs, category });
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Failed to fetch proverbs.");
   }
 });
 

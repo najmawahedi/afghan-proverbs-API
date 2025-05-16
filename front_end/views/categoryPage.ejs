@@ -1,21 +1,42 @@
 <%- include('header') %>
 
-<div class="container py-4">
-  <h2 class="mb-4">Proverbs in Category: "<%= category %>"</h2>
+<div class="container py-5">
+  <h1 class="text-center mb-4">Proverbs in “<%= category %>”</h1>
 
   <% if (proverbs.length === 0) { %>
-  <p>No proverbs found in this category.</p>
-  <% } else { %> <% proverbs.forEach(p => { %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title"><%= p.category %></h5>
-      <p><strong>Dari:</strong> <%= p.textDari %></p>
-      <p><strong>Pashto:</strong> <%= p.textPashto %></p>
-      <p><strong>English:</strong> <%= p.translationEn %></p>
-      <p><strong>Meaning:</strong> <%= p.meaning %></p>
-    </div>
+  <div class="alert alert-warning text-center">
+    No proverbs found in this category.
   </div>
-  <% }) %> <% } %>
+  <% } else { %>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% proverbs.forEach(p => { %>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <p class="card-text"><strong>Dari:</strong> <%= p.textDari %></p>
+          <p class="card-text"><strong>Pashto:</strong> <%= p.textPashto %></p>
+          <p class="card-text">
+            <strong>English:</strong> <%= p.translationEn %>
+          </p>
+          <p class="card-text"><strong>Meaning:</strong> <%= p.meaning %></p>
+        </div>
+        <div
+          class="card-footer text-muted d-flex justify-content-between align-items-center"
+        >
+          <small><%= p.category %></small>
+          <a href="/proverbs/<%= p.id %>" class="btn btn-primary mt-2"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+
+  <div class="mt-4 text-center">
+    <a href="/categories" class="btn btn-secondary">⬅ Back to Categories</a>
+  </div>
 </div>
 
 <%- include('footer') %>

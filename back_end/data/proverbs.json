@@ -118,5 +118,45 @@
     "translationEn": "Chase big dreams",
     "meaning": "Don't settle for less, always aim for greatness.",
     "category": "Dreams"
+  },
+  {
+    "id": 16,
+    "textDari": "حاضر نشو تا قبلاً همه کارها را خودت انجام دادی",
+    "textPashto": "احمد نشه تر هغه پورې چې ټول کارونه پخپل لاس دې کړي وي",
+    "translationEn": "Don’t arrive until you’ve already done everything yourself",
+    "meaning": "Why show up if you’ve already taken all the credit?",
+    "category": "Sarcasm"
+  },
+  {
+    "id": 17,
+    "textDari": "هر که زرنگ است، به خود زحمت نمی‌دهد",
+    "textPashto": "هغه څوک چې زرنګ وي، خپلې پښې ته به زحمت نه ورکوي",
+    "translationEn": "If you’re clever, you don’t bother your own feet",
+    "meaning": "True wisdom is never having to lift a finger.",
+    "category": "Sarcasm"
+  },
+  {
+    "id": 18,
+    "textDari": "قول نده، عمل نکن؛ مردم بیشتر خوششان می‌آید",
+    "textPashto": "وعده مه ورکوه، عمل نه کوه؛ خلک ډېر خوښيږي",
+    "translationEn": "Make no promises, do nothing — people love it more",
+    "meaning": "Why overdeliver when underpromising is so much easier?",
+    "category": "Sarcasm"
+  },
+  {
+    "id": 19,
+    "textDari": "اگر می‌خواهی همه را خوشحال کنی، هیچ کاری نکن",
+    "textPashto": "که غواړې ټول خوشحاله کړې، هېڅ مه کوه",
+    "translationEn": "If you want to please everyone, do absolutely nothing",
+    "meaning": "The best way to avoid complaints is to stay out of it.",
+    "category": "Sarcasm"
+  },
+  {
+    "id": 20,
+    "textDari": "زمان می‌گذرد؛ تو هم فقط تماشا کن",
+    "textPashto": "وخت تېرېږي؛ تۀ هم یوازې ګورې",
+    "translationEn": "Time passes — you might as well watch",
+    "meaning": "Why act when you can just enjoy the show?",
+    "category": "Sarcasm"
   }
 ]
