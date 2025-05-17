@@ -103,6 +103,27 @@ APP.get("/categories", async (req, res) => {
   }
 });
 
+APP.get("/search", async (req, res) => {
+  const keyword = req.query.keyword;
+
+  if (!keyword) {
+    return res.render("search", { proverbs: [] });
+  }
+
+  try {
+    const response = await axios.get(
+      `https://afghan-proverbs-api-12.onrender.com/proverbs/search?keyword=${encodeURIComponent(
+        keyword
+      )}`
+    );
+    const proverbs = response.data;
+    res.render("search", { proverbs });
+  } catch (error) {
+    console.error("Search error:", error.message);
+    res.render("search", { proverbs: [] });
+  }
+});
+
 APP.get("/categories/:categoryName", async (req, res) => {
   const category = req.params.categoryName;
   try {
