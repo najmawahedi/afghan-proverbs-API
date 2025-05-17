@@ -42,6 +42,8 @@ npm start
 
 See a beautiful list of proverbs on the Home page.
 
+#### Search a proverb by keyword
+
 #### Get a Random Proverb
 
 #### Add Your Own
